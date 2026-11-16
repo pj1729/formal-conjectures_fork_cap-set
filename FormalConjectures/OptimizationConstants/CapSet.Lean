@@ -15,11 +15,13 @@ limitations under the License.
 -/
 module
 
-public import FormalConjecturesUtil
+--public import FormalConjecturesUtil
 
 /-!
 # Cap Set Problem
-*Reference:* [source](https://…)
+*References:* 
+- [EG2016] Ellenberg, J. S. and Gijswijt, D., *On large subsets of F_q^n with no 
+  three-term arithmetic progression* (https://doi.org/10.4007/annals.2017.185.1.8)
 -/
 
 @[expose] public section
