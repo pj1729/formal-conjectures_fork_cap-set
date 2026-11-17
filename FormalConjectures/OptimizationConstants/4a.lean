@@ -21,6 +21,8 @@ public import FormalConjecturesUtil
 
 *References:*
 - [Tao's optimization constant 4a](https://teorth.github.io/optimizationproblems/constants/4a.html)
+- [EG2016] Ellenberg, J. S. and Gijswijt, D., *On large subsets of F_q^n with no 
+  three-term arithmetic progression* (https://doi.org/10.4007/annals.2017.185.1.8)
 -/
 
 @[expose] public section
