@@ -34,8 +34,8 @@ The largest constant $C$ such that $r(n) \leq C^{(1+o(1)) n}$, where $r(n)$ is t
 
 @[optimization_constant "4a"]
 noncomputable def C4a : ℝ :=
-  limsup (fun n ↦ ((Nat.cast : ℕ → ℝ) (sSup (card '' {A : Finset (GaloisField 3 n) |
-  ∀ x ∈ A, ∀ y z, x + y + z = 0 → x = y ∧ y = z}))) ^ (1 / n)) atTop
+  sSup {(sSup (card '' {A : Finset (GaloisField 3 n) | 
+  ∀ x ∈ A, ∀ y ∈ A, ∀ z ∈ A, x + y + z = 0 → x = y ∧ y = z})) ^ (1 / n) | n > 0}
   -- sSup {C : ℝ | GaloisField 3 n}
 #check Asymptotics.IsLittleO
 #check Asymptotics.isLittleO_iff_forall_isBigOWith
