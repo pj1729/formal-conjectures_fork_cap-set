@@ -48,4 +48,9 @@ def c4a_eq.answer : ℝ := sorry
 theorem c4a_eq : C4a = c4a_eq.answer := by
   sorry
 
+/-- Can the best known upper bound $3/8 \sqrt[3]{207+33\sqrt{33}}$ be improved? -/
+@[category research open, question, AMS 5]
+theorem c4a_upper_bound_improved : C4a < 3 / 8 * (207 + 33 * √ 33) ^ (1/3) := by
+  sorry
+
 end Constant4a
