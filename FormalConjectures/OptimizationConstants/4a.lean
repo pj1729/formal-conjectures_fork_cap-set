@@ -27,6 +27,8 @@ public import FormalConjecturesUtil
 
 @[expose] public section
 
+open Filter Finset
+
 namespace Constant4a
 /-- **Tao's Optimization constant 4a / The cap set constant**:
 The largest constant $C$ such that $r(n) \leq C^{(1+o(1)) n}$, where $r(n)$ is the size of the largest cap set in $\mathbb{F}_{3}^{n}$, i.e., a set that does not contain any lines (length three progressions).
@@ -34,11 +36,8 @@ The largest constant $C$ such that $r(n) \leq C^{(1+o(1)) n}$, where $r(n)$ is t
 
 @[optimization_constant "4a"]
 noncomputable def C4a : ℝ :=
-  limsup (fun n ↦ ((Nat.cast : ℕ → ℝ) (sSup (card '' {A : Finset (GaloisField 3 n) |
-  ∀ x ∈ A, ∀ y z, x + y + z = 0 → x = y ∧ y = z}))) ^ (1 / n)) atTop
-  -- sSup {C : ℝ | GaloisField 3 n}
-#check Asymptotics.IsLittleO
-#check Asymptotics.isLittleO_iff_forall_isBigOWith
+  limsup (fun n ↦ (sSup (card '' {A : Finset (GaloisField 3 n) |
+  ThreeAPFree (A : Set (GaloisField 3 n))})) ^ (1 / (n : ℝ))) atTop
 
 
 def c4a_eq.answer : ℝ := sorry
