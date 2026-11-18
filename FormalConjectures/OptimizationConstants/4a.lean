@@ -53,12 +53,7 @@ theorem c4a_upper_bound_improved : C4a < 3 / 8 * (207 + 33 * √ 33) ^ (1 / (3 :
 
 /-- The best know lower bound, $2.2203$, from [ZWLPLZJZZZ2025] -/
 @[category research solved, AMS 5]
-theorem c4a_lower_bound : C4a ≥ 2.2203 := by
-  sorry
-
-/-- Can the best known lower bound be improved? -/
-@[category research open, AMS 5]
-theorem c4a_lower_bound_improved : C4a > 2.2203 := by
+theorem c4a_lower_bound : C4a > 2.2203 := by
   sorry
 
 def c4a_eq.answer : ℝ := sorry
