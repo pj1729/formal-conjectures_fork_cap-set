@@ -21,8 +21,9 @@ public import FormalConjecturesUtil
 
 *References:*
 - [Tao's optimization constant 4a](https://teorth.github.io/optimizationproblems/constants/4a.html)
-- [EG2016] Ellenberg, J. S. and Gijswijt, D., *On large subsets of F_q^n with no 
+- [EG2016] Ellenberg, J. S. and Gijswijt, D., *On large subsets of F_q^n with no
   three-term arithmetic progression* (https://doi.org/10.4007/annals.2017.185.1.8)
+- [ZWLPLZJZZZ2025] Zhai, Y., Wei, Z., Li, R., Pan, K., Liu, S., Zhang, L., Ji, J., Zhang, W., Zhang, Y. and Zhang, Y., 2025. (X)-evolve: Solution space evolution powered by large language models. https://arxiv.org/abs/2508.07932
 -/
 
 @[expose] public section
@@ -39,17 +40,32 @@ noncomputable def C4a : ℝ :=
   sSup {(sSup (card '' {A : Finset (GaloisField 3 n) |
   ThreeAPFree (A : Set (GaloisField 3 n))})) ^ (1 / (n : ℝ)) | n > 0}
 
+set_option linter.style.formal_proof_palomar false in
+/-- The best known upper bound, $3/8 \sqrt[3]{207+33\sqrt{33}}$, proved in [EG2016]. -/
+@[category research solved, AMS 5, formal_proof using lean4 at "https://github.com/lean-forward/cap_set_problem"]
+theorem c4a_upper_bound : C4a ≤ 3 / 8 * (207 + 33 * √ 33) ^ (1 / (3 : ℝ)) := by
+  sorry
+
+/-- Can the best known upper bound $3/8 \sqrt[3]{207+33\sqrt{33}} \approx 2.756$ be improved? -/
+@[category research open, question, AMS 5]
+theorem c4a_upper_bound_improved : C4a < 3 / 8 * (207 + 33 * √ 33) ^ (1 / (3 : ℝ)) := by
+  sorry
+
+/-- The best know lower bound, $2.2203$, from [ZWLPLZJZZZ2025] -/
+@[category research solved, AMS 5]
+theorem c4a_lower_bound : C4a ≥ 2.2203 := by
+  sorry
+
+/-- Can the best known lower bound be improved? -/
+@[category research open, AMS 5]
+theorem c4a_lower_bound_improved : C4a > 2.2203 := by
+  sorry
 
 def c4a_eq.answer : ℝ := sorry
 
 /-- What is the exact value of the constant? -/
 @[category research open, question value, AMS 5]
 theorem c4a_eq : C4a = c4a_eq.answer := by
-  sorry
-
-/-- Can the best known upper bound $3/8 \sqrt[3]{207+33\sqrt{33}}$ be improved? -/
-@[category research open, question, AMS 5]
-theorem c4a_upper_bound_improved : C4a < 3 / 8 * (207 + 33 * √ 33) ^ (1 / (3 : ℝ)) := by
   sorry
 
 end Constant4a
